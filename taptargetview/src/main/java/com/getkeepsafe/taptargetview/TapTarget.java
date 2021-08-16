@@ -83,6 +83,7 @@ public class TapTarget {
   boolean tintTarget = true;
   boolean transparentTarget = false;
   float descriptionTextAlpha = 0.54f;
+  boolean pulseEnabled = true;
 
   /**
    * Return a tap target for the overflow button from the given toolbar
@@ -92,6 +93,13 @@ public class TapTarget {
   public static TapTarget forToolbarOverflow(Toolbar toolbar, CharSequence title) {
     return forToolbarOverflow(toolbar, title, null);
   }
+
+  //ability to cancel animation
+  public TapTarget pulse(boolean status) {
+    this.pulseEnabled = status;
+    return this;
+  }
+
 
   /** Return a tap target for the overflow button from the given toolbar
    * <p>
